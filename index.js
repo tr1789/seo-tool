@@ -1,6 +1,5 @@
 const STOP_WORDS = [
-  "le","la","les","de","des","du","un","une","et","en","à","pour","avec","sur",
-  "par","ce","ces","dans","au","aux","que","qui","se","ne","pas","plus","ou"
+  "a","à","au","aux","avec","ce","ces","cet","cette","dans","de","des","du","en","est","et","la","le","les","ne","ni","nos","nous","on","or","ou","par","pas","que","qui","sa","ses","son","sur","ta","te","tes","ton","tu","un","une","vos","votre","vous"
 ];
 
 const express = require("express");
