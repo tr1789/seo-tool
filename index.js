@@ -77,6 +77,19 @@ app.get("/analyze", async (req, res) => {
 
     const keywords = extractKeywords($);
 
+    // ===== STRUCTURE H2 / H3 (ordre réel) =====
+    const structure = [];
+
+    $("h2, h3").each((i, el) => {
+      const tag = $(el).get(0).tagName;
+      const text = $(el).text().trim();
+
+      structure.push({
+        type: tag,
+        text: text
+      });
+    });
+
     const alerts = [];
 
     // H1
@@ -102,8 +115,9 @@ app.get("/analyze", async (req, res) => {
       title,
       meta,
       h1,
-      h2: h2.length ? h2 : ["no h2"],
-h3: h3.length ? h3 : ["no h3"],
+      h2,
+      h3,
+      structure, // 👈 nouveau
       images,
       alerts,
       keywords
