@@ -1,3 +1,8 @@
+const STOP_WORDS = [
+  "le","la","les","de","des","du","un","une","et","en","à","pour","avec","sur",
+  "par","ce","ces","dans","au","aux","que","qui","se","ne","pas","plus","ou"
+];
+
 const express = require("express");
 const axios = require("axios");
 const cheerio = require("cheerio");
@@ -33,8 +38,9 @@ function cleanText(text) {
     .toLowerCase()
     .replace(/[^\w\sàâäéèêëîïôöùûüç]/gi, "")
     .split(/\s+/)
-    .filter(word => word.length > 1);
-}
+    .filter(word =>
+  word.length > 1 && !STOP_WORDS.includes(word);
+})
 
 function extractKeywords($) {
   const scores = {};
