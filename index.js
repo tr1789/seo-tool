@@ -102,8 +102,8 @@ app.get("/analyze", async (req, res) => {
       title,
       meta,
       h1,
-      h2,
-      h3,
+      h2: h2.length ? h2 : ["no h2"],
+h3: h3.length ? h3 : ["no h3"],
       images,
       alerts,
       keywords
