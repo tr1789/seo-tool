@@ -39,8 +39,9 @@ function cleanText(text) {
     .replace(/[^\w\sàâäéèêëîïôöùûüç]/gi, "")
     .split(/\s+/)
     .filter(word =>
-  word.length > 1 && !STOP_WORDS.includes(word);
-})
+  word.length > 1 && !STOP_WORDS.includes(word)
+);
+}
 
 function extractKeywords($) {
   const scores = {};
