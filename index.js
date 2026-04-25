@@ -33,7 +33,7 @@ function cleanText(text) {
     .toLowerCase()
     .replace(/[^\w\sàâäéèêëîïôöùûüç]/gi, "")
     .split(/\s+/)
-    .filter(word => word.length > 2);
+    .filter(word => word.length > 1);
 }
 
 function extractKeywords($) {
@@ -55,7 +55,7 @@ function extractKeywords($) {
 
   return Object.entries(scores)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 10)
+    .slice(0, 20)
     .map(([word, score]) => ({ word, score }));
 }
 
