@@ -91,7 +91,12 @@ app.get("/analyze", async (req, res) => {
 
     const alerts = [];
 
-    // H1
+    // Title
+if (!title) {
+  alerts.push("❌ Balise Title absente");
+}
+
+// H1
     if (h1.length === 0) {
       alerts.push("❌ Pas de H1");
     }
