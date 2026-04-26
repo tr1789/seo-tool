@@ -61,6 +61,8 @@ app.get("/analyze", async (req, res) => {
 
     const title = $("title").text();
 
+const siteName = $('meta[property="og:site_name"]').attr("content") || null;
+
     const meta = $('meta[name="description"]').attr("content") || "";
 
     const h1 = $("h1").map((i, el) => $(el).text().trim()).get();
@@ -117,6 +119,7 @@ if (!title) {
 
     res.json({
       title,
+      siteName,
       meta,
       h1,
       h2,
